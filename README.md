@@ -1,1 +1,1 @@
-# Optical-Music-Recognition-with-Tensorflow
+# Optical Music Recognition with Tensorflow
