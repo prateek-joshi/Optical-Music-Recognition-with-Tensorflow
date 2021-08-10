@@ -8,7 +8,7 @@ import numpy as np
 import requests, os
 import shutil, sys
 
-MODEL_NAME = 'SSD_MobileNet_V2_FPNLite_320x320'
+MODEL_NAME = 'SSD_MobileNet_V2_FPNLite_640x640'
 LABEL_MAP_NAME = 'label_map.pbtxt'
 
 @tf.function
@@ -57,7 +57,7 @@ detection_model = model_builder.build(model_config=configs['model'], is_training
 
 # Restore checkpoints
 ckpt = tf.compat.v2.train.Checkpoint(model=detection_model)
-ckpt.restore(os.path.join(paths['CHECKPOINT_PATH'],'ckpt-4')).expect_partial()
+ckpt.restore(os.path.join(paths['CHECKPOINT_PATH'],'ckpt-3')).expect_partial()
 
 # TODO Change to argument from script
 img_url = sys.argv[1]
